@@ -44,8 +44,6 @@ if(num3 >=10 && num3 <= 20){
   print("Número fora do intervalo");
 }
 
-
-
 // 4️⃣ Exercício de Atribuição Combinada:
 // Dado que a variável preco começa com o valor de 100, use o operador de atribuição para:
 // Adicionar 20 ao valor de preco.
