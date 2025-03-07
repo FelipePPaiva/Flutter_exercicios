@@ -1,28 +1,25 @@
 void main(){
-  String nomeAluno = "João";
-  double nota1 = 1.4;
-  double nota2 = 5.1;
-  double media = (nota1 + nota2) /2;
+  
+  List< Map<String, dynamic>> alunos =[
+    {"nome":"Felipe","notas":{"Matematica": 8.5, "Portugues": 9.0, "Geografia": 7.5}},
+    {"nome":"Ana", "notas":{"Matematica": 9.0, "Portugues": 8.5, "Geografia": 9.5}},
+    {"nome":"Joao", "notas": {"Matematica": 7.0, "Portugues": 8.0, "Geografia": 8.5}},
+  ];
 
-  if(media >= 7){
-    print("O Aluno $nomeAluno está aprovado com a media de $media");
-  }else {
-    print("O Aluno $nomeAluno está reprovado com a media de $media");
-  }
+  Set<String> disciplinas = {"Matematica","Portugues","Geografia","Historia","Ciencia"};
 
-  switch(media){
-    case >= 9:
-      print("O Aluno teve a media A");
-      break;
-    case >= 8:
-      print("O Aluno teve a media B");
-      break;
-    case >= 6:
-      print("O Aluno teve a media C");
-      break;
-    case >= 4:
-      print("O Aluno teve a media D");
-    default:
-      print("O Aluno teve a media E");
+  for (var aluno in alunos){
+    double soma = 0;
+    int contador = 0;
+
+    Map<String, dynamic> notasAluno = aluno['notas'];
+    notasAluno.forEach((disciplinas, notas){
+      soma += notas;
+      contador++;
+    });
+
+    double media = soma / contador;
+    print("A media do aluno ${aluno['nome']} é de ${media.toStringAsFixed(2)}");
+
   }
 }
